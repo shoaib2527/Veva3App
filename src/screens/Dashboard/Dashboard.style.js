@@ -2,12 +2,12 @@ import {StyleSheet} from 'react-native';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: '7%',
+    marginTop: '5%',
     alignItems: 'center',
   },
   actionBar: {
     backgroundColor: 'black',
-    height: '8%',
+    height: '10%',
     width: '100%',
     alignItems: 'center',
     flexDirection: 'row',
@@ -51,14 +51,22 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     width: "80%",
-    height: '30%'
+    height: '25%'
   },
   input: {
       borderWidth: 0.5,
-      borderRadius: 10,
       borderColor: 'grey',
       height: '50%',
       width: '95%'
+  },
+  buttonContainer: {
+      borderRadius: 20,
+      width: '60%',
+      height: '15%',
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: '#4551E7'
   }
+  
 });
 export default styles;

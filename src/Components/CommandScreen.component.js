@@ -1,12 +1,9 @@
 import React, {Component} from 'react';
 import {View, Text, Image, TouchableOpacity, StyleSheet} from 'react-native';
 import Icon from 'react-native-vector-icons/Entypo';
-import Icon1 from 'react-native-vector-icons/Ionicons';
 import Icon2 from 'react-native-vector-icons/Feather';
-import Icon3 from 'react-native-vector-icons/Foundation';
-import Icon4 from 'react-native-vector-icons/FontAwesome5';
 
-const MainComponent = ({elementNo}) => {
+const MainComponent = ({elementNo, title, onPressOpen, deviceNo}) => {
   return (
     <View style={styles.wrapper}>
       <TouchableOpacity style={styles.optionsIcon}>
@@ -16,54 +13,58 @@ const MainComponent = ({elementNo}) => {
       {elementNo == 1 ? (
         <>
           <View style={styles.mainIconContainer}>
-            <Icon2 name="thumbs-up" size={35} color="#5A99E8" />
+            <TouchableOpacity onPress={onPressOpen}>
+              <Icon2 name="thumbs-up" size={35} color="#5A99E8" />
+            </TouchableOpacity>
           </View>
-          <Text style={styles.componentTitle}>GET STATUS</Text>
-          <Text style = {styles.deviceno}>Device number 1</Text>
+          <Text style={styles.componentTitle}>{title}</Text>
+          <Text style={styles.deviceno}>Device number {deviceNo}</Text>
         </>
       ) : null}
       {elementNo == 2 ? (
         <>
-        <View style={styles.mainIconContainer}>
-          <Icon2 name="thumbs-up" size={35} color="#5A99E8" />
-        </View>
-        <Text style={styles.componentTitle}>GET STATUS</Text>
-        <Text style = {styles.deviceno}>Device number 1</Text>
-      </>
-      ) : null}
-      {elementNo == 3 ? (
-       <>
-       <View style={styles.mainIconContainer}>
-         <Icon2 name="thumbs-up" size={35} color="#5A99E8" />
-       </View>
-       <Text style={styles.componentTitle}>GET STATUS</Text>
-       <Text style = {styles.deviceno}>Device number 1</Text>
-     </>
-      ) : null}
-      {elementNo == 4 ? <>
           <View style={styles.mainIconContainer}>
             <Icon2 name="thumbs-up" size={35} color="#5A99E8" />
           </View>
-          <Text style={styles.componentTitle}>GET STATUS</Text>
-          <Text style = {styles.deviceno}>Device number 1</Text>
-        </>: null}
+          <Text style={styles.componentTitle}>{title}</Text>
+          <Text style={styles.deviceno}>Device number {deviceNo}</Text>
+        </>
+      ) : null}
+      {elementNo == 3 ? (
+        <>
+          <View style={styles.mainIconContainer}>
+            <Icon2 name="thumbs-up" size={35} color="#5A99E8" />
+          </View>
+          <Text style={styles.componentTitle}>{title}</Text>
+          <Text style={styles.deviceno}>Device number {deviceNo}</Text>
+        </>
+      ) : null}
+      {elementNo == 4 ? (
+        <>
+          <View style={styles.mainIconContainer}>
+            <Icon2 name="thumbs-up" size={35} color="#5A99E8" />
+          </View>
+          <Text style={styles.componentTitle}>{title}</Text>
+          <Text style={styles.deviceno}>Device number {deviceNo}</Text>
+        </>
+      ) : null}
       {elementNo == 5 ? (
         <>
-        <View style={styles.mainIconContainer}>
-          <Icon2 name="thumbs-up" size={35} color="#5A99E8" />
-        </View>
-        <Text style={styles.componentTitle}>GET STATUS</Text>
-        <Text style = {styles.deviceno}>Device number 1</Text>
-      </>
+          <View style={styles.mainIconContainer}>
+            <Icon2 name="thumbs-up" size={35} color="#5A99E8" />
+          </View>
+          <Text style={styles.componentTitle}>{title}</Text>
+          <Text style={styles.deviceno}>Device number {deviceNo}</Text>
+        </>
       ) : null}
       {elementNo == 6 ? (
         <>
-        <View style={styles.mainIconContainer}>
-          <Icon2 name="thumbs-up" size={35} color="#5A99E8" />
-        </View>
-        <Text style={styles.componentTitle}>GET STATUS</Text>
-        <Text style = {styles.deviceno}>Device number 1</Text>
-      </>
+          <View style={styles.mainIconContainer}>
+            <Icon2 name="thumbs-up" size={35} color="#5A99E8" />
+          </View>
+          <Text style={styles.componentTitle}>{title}</Text>
+          <Text style={styles.deviceno}>Device number {deviceNo}</Text>
+        </>
       ) : null}
     </View>
   );
@@ -92,13 +93,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   componentTitle: {
-    fontSize: 16,
+    fontSize: 13,
     color: '#5A99E8',
   },
   deviceno: {
-      fontSize: 9,
-      color: 'grey'
-  }
+    fontSize: 9,
+    color: 'grey',
+  },
 });
 
 export default MainComponent;
