@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     width: '75%',
     textAlign: 'center',
     color: 'white',
-    fontSize: 19
+    fontSize: 19,
   },
   arrowBack: {
     width: '10%',
@@ -36,37 +36,41 @@ const styles = StyleSheet.create({
     width: '100%',
     paddingTop: '5%',
   },
-  modal:{
-      borderRadius: 4,
-      backgroundColor: 'white',
-      width: '80%',
-      height: '40%',
-      paddingVertical: '1%',
-      alignItems: "center"
+  modal: {
+    borderRadius: 4,
+    backgroundColor: 'white',
+    width: '85%',
+    height: '50%',
+    paddingVertical: '1%',
+    alignItems: 'center',
   },
-  closeModal:{
-      width: "99%",
-      marginRight: '1%',
-      alignItems: 'flex-end'
+  modalScroll: {
+    width: '90%',
+    paddingBottom: 100,
+  },
+  closeModal: {
+    width: '99%',
+    marginRight: '1%',
+    alignItems: 'flex-end',
   },
   inputContainer: {
-    width: "80%",
-    height: '25%'
+    width: '80%',
+    height: 70,
   },
   input: {
-      borderWidth: 0.5,
-      borderColor: 'grey',
-      height: '50%',
-      width: '95%'
+    borderWidth: 0.5,
+    borderColor: 'grey',
+    height: '50%',
+    width: '95%',
   },
   buttonContainer: {
-      borderRadius: 20,
-      width: '60%',
-      height: '15%',
-      justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor: '#4551E7'
-  }
-  
+    alignSelf: 'center',
+    borderRadius: 20,
+    width: '60%',
+    height: 40,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#4551E7',
+  },
 });
 export default styles;

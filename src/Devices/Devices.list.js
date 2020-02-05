@@ -1,10 +1,10 @@
 const Devices = [
   {
-    name: 'Veva 3',
+    deviceName: 'Veva 3',
     iconSelector: 'zmdi-vibration',
     commands: [
       {
-        title: "Get Device Status",
+        title: 'Get Device Status',
         label: '${get-status-label}',
         cmd: 'stat 3g',
         iconSelector: 'zmdi-plus-circle',
@@ -15,7 +15,7 @@ const Devices = [
           '${serial-number} ${[0][1]}<br>${hw-version} ${[0][2]}<br>${fw-version} ${[0][3]}<br>${temperature} ${[0][4]}<br>${pwr-source} ${[0][5]}<br>${voltage} ${[0][6]}',
       },
       {
-        title: "Get Device Info",
+        title: 'Get Device Status',
         label: '${get-status-label}',
         cmd: 'stat 3g',
         iconSelector: 'zmdi-plus-circle',
@@ -26,7 +26,7 @@ const Devices = [
           '${serial-number} ${[0][1]}<br>${hw-version} ${[0][2]}<br>${fw-version} ${[0][3]}<br>${temperature} ${[0][4]}<br>${pwr-source} ${[0][5]}<br>${voltage} ${[0][6]}',
       },
       {
-        title: "Get Device Version",
+        title: 'Get Device Status',
         label: '${get-status-label}',
         cmd: 'stat 3g',
         iconSelector: 'zmdi-plus-circle',
@@ -37,18 +37,20 @@ const Devices = [
           '${serial-number} ${[0][1]}<br>${hw-version} ${[0][2]}<br>${fw-version} ${[0][3]}<br>${temperature} ${[0][4]}<br>${pwr-source} ${[0][5]}<br>${voltage} ${[0][6]}',
       },
       {
-        title: "Manual Sample",
+        title: 'Manual Sample',
         label: '${manual-sample-label}',
         cmd: 'samp {sec} {sr} {range} {filter} {raw}',
         iconSelector: 'mzmdi-plus-circle',
         resposneValidation: 'PPV:.*PVS:.*AMP:.*',
         responsePattern: '/.*\r\n/gi',
         cmdOutputMsg: '${[2][1]}<br>${[3][1]}<br>${[4][1]}',
-        cmdParams: [
-          {
+        cmdParams: {
+          sr: {
+            title: 'Sample Rate',
             label: '${sample-rate}',
             required: true,
             type: 'select',
+            id: '${sample-rate}',
             options: {
               default: [
                 {
@@ -66,8 +68,10 @@ const Devices = [
               ],
             },
           },
-          {
+          sec: {
+            title: 'Seconds',
             label: '${seconds}',
+            id: '${seconds}',
             required: true,
             type: 'number',
             dependsOn: 'sr',
@@ -86,8 +90,10 @@ const Devices = [
               },
             },
           },
-          {
+          range: {
+            title: 'Range',
             label: '${range}',
+            id: '${range}',
             required: true,
             type: 'select',
             options: {
@@ -107,8 +113,10 @@ const Devices = [
               ],
             },
           },
-          {
+          filter: {
+            title: 'Filter',
             label: '${filter}',
+            id: '${filter}',
             required: true,
             type: 'select',
             options: {
@@ -122,26 +130,27 @@ const Devices = [
                   value: 1,
                 },
               ],
+            },},
+            raw: {
+              title: 'Raw Data',
+              label: '${raw-data}',
+              id: '${raw-data}',
+              required: true,
+              type: 'select',
+              options: {
+                default: [
+                  {
+                    label: '${yes}',
+                    value: 1,
+                  },
+                  {
+                    label: '${no}',
+                    value: 0,
+                  },
+                ],
+              },
             },
-          },
-          {
-            label: '${raw-data}',
-            required: true,
-            type: 'select',
-            options: {
-              default: [
-                {
-                  label: '${yes}',
-                  value: 1,
-                },
-                {
-                  label: '${no}',
-                  value: 0,
-                },
-              ],
-            },
-          },
-        ],
+        },
       },
     ],
   },
