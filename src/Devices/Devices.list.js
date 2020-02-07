@@ -15,28 +15,6 @@ const Devices = [
           '${serial-number} ${[0][1]}<br>${hw-version} ${[0][2]}<br>${fw-version} ${[0][3]}<br>${temperature} ${[0][4]}<br>${pwr-source} ${[0][5]}<br>${voltage} ${[0][6]}',
       },
       {
-        title: 'Get Device Status',
-        label: '${get-status-label}',
-        cmd: 'stat 3g',
-        iconSelector: 'zmdi-plus-circle',
-        responseValidation: 'MAC:.*HW:.*FW:.*',
-        responsePattern:
-          'MAC: (w{6})\r\nHW: (d.d)\r\nFW: (d.d.d)\r\nTemp: (dd.d)\r\nPwr: (w*)\r\nBat: (d.d)\r\n',
-        cmdOutputMsg:
-          '${serial-number} ${[0][1]}<br>${hw-version} ${[0][2]}<br>${fw-version} ${[0][3]}<br>${temperature} ${[0][4]}<br>${pwr-source} ${[0][5]}<br>${voltage} ${[0][6]}',
-      },
-      {
-        title: 'Get Device Status',
-        label: '${get-status-label}',
-        cmd: 'stat 3g',
-        iconSelector: 'zmdi-plus-circle',
-        responseValidation: 'MAC:.*HW:.*FW:.*',
-        responsePattern:
-          'MAC: (w{6})\r\nHW: (d.d)\r\nFW: (d.d.d)\r\nTemp: (dd.d)\r\nPwr: (w*)\r\nBat: (d.d)\r\n',
-        cmdOutputMsg:
-          '${serial-number} ${[0][1]}<br>${hw-version} ${[0][2]}<br>${fw-version} ${[0][3]}<br>${temperature} ${[0][4]}<br>${pwr-source} ${[0][5]}<br>${voltage} ${[0][6]}',
-      },
-      {
         title: 'Manual Sample',
         label: '${manual-sample-label}',
         cmd: 'samp {sec} {sr} {range} {filter} {raw}',
@@ -80,12 +58,12 @@ const Devices = [
                 min: 0,
                 max: 30,
               },
-              1000: {
+              thousand: {
                 min: 0,
                 max: 120,
               },
-              2000: {
-                min: 0,
+              twoThousand: {
+                 0,
                 max: 60,
               },
             },

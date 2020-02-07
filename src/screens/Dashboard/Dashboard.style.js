@@ -55,12 +55,11 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     width: '80%',
-    height: 70,
   },
   input: {
     borderWidth: 0.5,
     borderColor: 'grey',
-    height: '50%',
+    height: 40,
     width: '95%',
   },
   buttonContainer: {
@@ -72,5 +71,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#4551E7',
   },
+  invalidText:{
+    color: 'red',
+    fontSize: 11,
+  }
 });
 export default styles;
